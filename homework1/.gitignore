@@ -1,0 +1,6 @@
+.project
+.pydevproject
+
+env/
+
+octave-workspace
