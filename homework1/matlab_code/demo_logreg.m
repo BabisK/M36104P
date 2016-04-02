@@ -51,6 +51,9 @@ plot(X(t==0,2),X(t==0,3),'r.','Markersize',20);
 
 minX = min(X(:,2)); 
 maxX = max(X(:,2));
+t1 = -w(1)/w(3)  - (w(2)/w(3))*[minX maxX]
+t2 = -log(0.9/0.1)/w(3) - w(1)/w(3)  - (w(2)/w(3))*[minX maxX]
+t3 = -log(0.1/0.9)/w(3) - w(1)/w(3)  - (w(2)/w(3))*[minX maxX]
 plot([minX maxX], -w(1)/w(3)  - (w(2)/w(3))*[minX maxX],'k','LineWidth',2);
 plot([minX maxX], -log(0.9/0.1)/w(3) - w(1)/w(3)  - (w(2)/w(3))*[minX maxX],'k-.','LineWidth',1);
 plot([minX maxX], -log(0.1/0.9)/w(3) - w(1)/w(3)  - (w(2)/w(3))*[minX maxX],'k-.','LineWidth',1);
