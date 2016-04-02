@@ -92,9 +92,6 @@ USAGE
         test_data = numpy.loadtxt(fname='matlab_code/data2Ts.txt', delimiter=' ')
         #data_test = test_data[:, 0]
         (res, pred) = ml.test(test_data)
-        
-        plt.plot(data,target)
-        plt.show()
 
         return 0
     except KeyboardInterrupt:
