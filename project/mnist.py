@@ -2,6 +2,7 @@ from os import listdir
 from os.path import isfile, join
 
 import numpy
+import pickle
 
 def load_mnist(path):
     print('Reading MNIST dataset from storage')
@@ -38,3 +39,32 @@ def load_mnist_from_files(files):
         print('Read {} rows, {} columns from {}'.format(rows, columns, file))
 
     return data, target
+
+def pickle_mnist(traindata, traintarget, testdata, testtarget):
+    f=open('./mnist/trdata', mode='wb+')
+    pickle.dump(traindata, f)
+    f.close()
+    f = open('./mnist/trtarget', mode='wb+')
+    pickle.dump(traintarget, f)
+    f.close()
+    f = open('./mnist/tedata', mode='wb+')
+    pickle.dump(testdata, f)
+    f.close
+    f = open('./mnist/tetarget', mode='wb+')
+    pickle.dump(testtarget, f)
+    f.close()
+
+def unpickle_mnist():
+    fo = open('./mnist/trdata', 'rb')
+    traindata = pickle.load(fo)
+    fo.close()
+    fo = open('./mnist/trtarget', 'rb')
+    traintarget = pickle.load(fo)
+    fo.close()
+    fo = open('./mnist/tedata', 'rb')
+    testdata = pickle.load(fo)
+    fo.close()
+    fo = open('./mnist/tetarget', 'rb')
+    testtarget = pickle.load(fo)
+    fo.close()
+    return traindata, traintarget, testdata, testtarget
